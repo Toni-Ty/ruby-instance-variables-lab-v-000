@@ -1,13 +1,13 @@
-require 'pry'
+class Dog
+def name=(dogs_name)
+  @this_dogs_name = dogs_name
 
-  	site = "http://www.cafepoint.co.uk/different-types-of-coffee/"
+end
+def name
+  @this_dogs_name
+  end
+end
 
-  	page = Nokogiri::HTML(open(site))
-  	coffee = page.css("div.col-md-9.list section")
-
-  	coffee.each do |coffee_drink|
-  	  coffee_descrip = coffee_drink.css("h2").text
-  	   puts coffee_descrip.each_with_index(1) do |coffee, index|
-         binding.pry
-  	    end
-  	end
+lassie = Dog.new
+lassie.name = "Lassie"
+puts lassie.name
